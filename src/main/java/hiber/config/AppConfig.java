@@ -45,10 +45,11 @@ public class AppConfig {
       props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
       props.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
       factoryBean.setHibernateProperties(props);
-      factoryBean.setAnnotatedClasses(User.class);
-      factoryBean.setAnnotatedClasses(Car.class);
+      factoryBean.setAnnotatedClasses(User.class, Car.class);
       return factoryBean;
    }
+
+
 
    @Bean
    public HibernateTransactionManager getTransactionManager() {
